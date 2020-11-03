@@ -1,12 +1,410 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+<style>
+  
+/*navbar styling*/
+body
+        {
+            background-image:url("https://www.emerlyn.com/wp-content/uploads/2015/10/corporate-profile-background.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat:none;
+            margin:0px;
+            padding: 0px;
+            font-family: tahoma;
+        }
+        nav
+        {
+            float: none;
+            clear:both;
+            width:100%;
+            margin:5% auto;
+           
+        }
+        nav ul
+        {
+            list-style:none;
+            margin:0px;
+            pading:0px;
+        }
+        nav li
+        {
+            float: none;
+            width:100%;
+                        
+        }
+        nav li a
+        {
+            display: block;
+            width: :100%;
+            padding:20px;
+            border-left:5px solid;
+            position:relative;
+            z-index: 2;/*for showing the lower layer*/
+            text-decoration: none;
+            color:Black;
+            font-weight:bolder;
+            box-sizing: border-box;
+            
+        }
+        nav li a:hover
+        {
+            border-bottom: 0px;
+            color:white;
+            text-decoration:none;
+            
+        }
+        nav li:first-child a
+        {
+            border-left: 10px solid #3498db;
+            
+        }
+        nav li:nth-child(2) a
+        {
+            border-left: 10px solid #ffd071;
+            
+        } 
+        nav li:nth-child(3) a
+        {
+            border-left: 10px solid #f0776c;
+            
+        }
+        
+         nav li:nth-child(4) a
+        {
+            border-left: 10px solid #d8e84a;
+            
+        }
+        nav li:last-child a
+        {
+            border-left: 10px solid #1abc9c;
+            
+        }
+        nav li a:after
+        {
+            content:"";
+            height:100%;
+            left:0px;
+            top:0px;
+            width:0px;
+            position: absolute;
+            transition: all .3s ease 0s;
+            z-index: -1;
+        }
+         nav li a:hover:after
+        {
+            width:100%;
+            
+            
+        }
+        nav li:first-child a:hover
+        {
+            background-color: #3498db;
+            
+        }
+         nav li:nth-child(2) a:after
+        {
+            background-color:#ffd071;
+        }
+        nav li:nth-child(3) a:after
+        {
+            background-color:#f0776c;
+        } 
+        nav li:nth-child(4) a:after
+        {
+            background-color:#d8e84a;
+        } 
+        nav li:last-child a:after
+        {
+            background-color:#1abc9c;
+        }
+        .overlay
+        {
+        position:absolute;
+        min-height:77%;
+        min-width:97%;
+        left:0;
+        top:0;
+        background:rgba(244, 244, 244, 0.51);
+        color:black;
+        margin:20px;
+        padding:20px;
+        }
+/*navbar styling ends*/
+
+/*end of header styling*/
+    .m30 {
+        margin: 30px;
+    }
+
+        img{
+        height:100%;
+        width:100%;
+        }
+
+        .item{
+        padding-left:5px;
+        padding-right:5px;
+        }
+        .item-card{
+        transition:0.5s;
+        cursor:pointer;
+        }
+        .item-card-title{  
+        font-size:15px;
+        transition:1s;
+        cursor:pointer;
+        }
+        .item-card-title i{  
+        font-size:15px;
+        transition:1s;
+        cursor:pointer;
+        color:#ffa710
+        }
+        .card-title i:hover{
+        transform: scale(1.25) rotate(100deg); 
+        color:#18d4ca;
+        
+        }
+        .card:hover{
+        transform: scale(1.05);
+        box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+        }
+        .card-text{
+            font-size:15px;
+            transition:1s;
+            cursor:pointer;
+            height:80px;  
+        }
+
+        .card::before, .card::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale3d(0, 0, 1);
+        transition: transform .3s ease-out 0s;
+        background: rgba(255, 255, 255, 0.1);
+        content: '';
+        pointer-events: none;
+        }
+        .card::before {
+        transform-origin: left top;
+        }
+        .card::after {
+        transform-origin: right bottom;
+        }
+        .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+        transform: scale3d(1, 1, 1);
+        
+        }
+
+        #wrapper1 .text{
+        position:relative;
+        bottom:30px;
+        left:0px;
+        visibility:hidden;
+        text-align: center;
+        color: black;
+        }
+
+        #wrapper1:hover .text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper1:hover h1 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper2 .text{
+        position:relative;
+        bottom:30px;
+        left:0px;
+        visibility:hidden;
+        text-align: center;
+        color: black;
+        }
+
+        #wrapper2:hover .text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper2:hover h1 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper3 .text{
+        position:relative;
+        bottom:30px;
+        left:0px;
+        visibility:hidden;
+        text-align: center;
+        color: black;
+        }
+
+        #wrapper3:hover .text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper3:hover h1 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper4 .text{
+        position:relative;
+        bottom:30px;
+        left:0px;
+        visibility:hidden;
+        text-align: center;
+        color: black;
+        }
+
+        #wrapper4:hover .text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper4:hover h1 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper5 .text{
+        position:relative;
+        bottom:30px;
+        left:0px;
+        visibility:hidden;
+        text-align: center;
+        color: black;
+        }
+
+        #wrapper5:hover .text {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+        #wrapper5:hover h1 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            visibility:visible;
+        }
+
+</style>
 <body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-
+  <header>
+    <div class="container">
+            <div class="row overlay">
+                <nav >
+                    <ul>
+                        <li><a href="#qualification">EDUCATIONAL QUALIFICATION</a></li>
+                        <li><a href="#skills">SKILLS</a></li>
+                        <li><a href="#experience">EXPERIENCE</a></li>
+                        <li><a href="#projects">PERSONAL AND WORK PROJECTS</a></li>
+                      <li><a href="#interests">INTERESTS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-2">
+        <!--   <div class="card card-block mb-2">
+            <h4 class="card-title">Card 1</h4>
+            <p class="card-text">Welcom to bootstrap card styles</p>
+            <a href="#" class="btn btn-primary">Submit</a>
+          </div>   -->
+          <div class="row" style="margin-top: 600px;">
+            <div class="col-md-12 col-sm-6 item" style="margin-top: 20px;" id="qualification">
+                <div id="wrapper1" class="card item-card card-block">
+                    <img class="hover" src="https://ps-attachments.s3.amazonaws.com/672bb697-ddd4-4524-94ff-f3637110835e/hBKtt-RMhkQtUCgUt7pC0w.png" alt="Photo of sunset">
+                    <h1 class="item-card-title mt-3 mb-3" style="font-size: 50px;  text-align: center;">EDUCATIONAL QUALIFICATION</h1>
+                    <p class="card-text text" style="font-size: 20px;">This is a company that builds websites, web apps and e-commerce solutions.</p>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-6 item" style="margin-top: 20px;" id="skills">
+              <div id="wrapper2" class="card item-card card-block">
+                <img class="hover" src="https://www.mckinsey.com/~/media/McKinsey/McKinsey%20Quarterly/The%20Five%20Fifty/Soft-Skills-1536x1536.png" alt="Photo of sunset">
+                <h1 class="card-title  mt-3 mb-3" style="font-size: 50px;  text-align: center;">SKILLS</h1>
+                <p class="card-text text" style="font-size: 20px;">This is a company that builds websites, web .</p> 
+          </div>
+            </div>
+            <div class="col-md-12 col-sm-6 item" style="margin-top: 20px;" id="experience">
+              <div id="wrapper3" class="card item-card card-block">
+                <img class="hover" src="https://static.pexels.com/photos/262550/pexels-photo-262550.jpeg" alt="Photo of sunset">
+                <h1 class="card-title  mt-3 mb-3" style="font-size: 50px;  text-align: center;">EXPERIENCE</h1>
+                <p class="card-text text" style="font-size: 20px;">This is a company that builds websites, web apps and e-commerce solutions.</p> 
+          </div>
+            </div>
+            <div class="col-md-12 col-sm-6 item" style="margin-top: 20px;" id="projects">
+              <div id="wrapper4" class="card item-card card-block">
+                <img class="hover" src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg" alt="Photo of sunset">
+                <h1 class="card-title  mt-3 mb-3" style="font-size: 50px; text-align: center;">PERSONAL AND WORK PROJECTS</h1>
+                <p class="card-text text" style="font-size: 20px;">This is a company that builds websites, web apps and e-commerce solutions.</p> 
+                </div>
+            </div>  
+            <div class="col-md-12 col-sm-6 item" style="margin-top: 20px;" id="interests">
+                <div id="wrapper5" class="card item-card card-block">
+                  <img class="hover" src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg" alt="Photo of sunset">
+                  <h1 class="card-title  mt-3 mb-3" style="font-size: 50px; text-align: center;">INTERESTS</h1>
+                  <p style="font-size: 20px;" class="card-text text">This is a company that builds websites, web apps and e-commerce solutions.</p> 
+                  </div>
+            </div> 
+          </div>
+        </div>
 </body>
 </html>
